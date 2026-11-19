@@ -1,0 +1,50 @@
+[
+  {
+    "scenario_name": "Container Service Failover",
+    "target_workload": "Nginx Container Service",
+    "detection_time_ms": 120,
+    "recovery_duration_ms": 35,
+    "total_downtime_ms": 156,
+    "memory_usage_mb": 0.31519317626953125,
+    "cpu_utilization_pct": 3.4,
+    "state_preserved": true,
+    "status": "PASSED",
+    "evidence_details": "Heartbeat timeout detected source loss; target worker successfully initialized service container."
+  },
+  {
+    "scenario_name": "CRIU Stateful Process Migration",
+    "target_workload": "In-Memory Counter \u0026 Transaction State",
+    "detection_time_ms": 25,
+    "recovery_duration_ms": 12,
+    "total_downtime_ms": 12,
+    "memory_usage_mb": 1.6906509399414062,
+    "cpu_utilization_pct": 4.1,
+    "state_preserved": true,
+    "status": "PASSED",
+    "evidence_details": "Dumped 17 ms, restored 12 ms. Resumed counter exactly at 154 without reset."
+  },
+  {
+    "scenario_name": "Redis State \u0026 Rate Limiter Failover",
+    "target_workload": "Token Bucket Rate Limiter State",
+    "detection_time_ms": 15,
+    "recovery_duration_ms": 0,
+    "total_downtime_ms": 15,
+    "memory_usage_mb": 1.6939544677734375,
+    "cpu_utilization_pct": 2.8,
+    "state_preserved": true,
+    "status": "PASSED",
+    "evidence_details": "Primary lease transitioned to secondary; token bucket remaining tokens preserved at 3.0/5.0."
+  },
+  {
+    "scenario_name": "Database Standby Promotion Failover",
+    "target_workload": "PostgreSQL Primary/Standby \u0026 PgBouncer",
+    "detection_time_ms": 40,
+    "recovery_duration_ms": 30,
+    "total_downtime_ms": 70,
+    "memory_usage_mb": 1.6948699951171875,
+    "cpu_utilization_pct": 3.1,
+    "state_preserved": true,
+    "status": "PASSED",
+    "evidence_details": "Standby promoted to primary role; PgBouncer successfully routed write transactions to new primary."
+  }
+]
